@@ -1,20 +1,31 @@
-import React from 'react'
-import Header from './Header'
+import Link from 'next/link'
 import Head from 'next/head'
 
-export default function Layout(props) {
-  return (
-    <div>
-      <Head>
-        <link
-          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          rel="stylesheet"
-        />
-      </Head>
-      <div className='container'>
-        <Header />
-        {props.children}
-      </div>
-    </div>
-  )
-}
+export default ({ children, title = 'This is the default title' }) => (
+  <div>
+    <Head>
+      <title>{title}</title>
+      <meta charSet='utf-8' />
+      <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+    </Head>
+    <header>
+      <nav>
+        <Link href='/'>
+          <a>Inicio</a>
+        </Link>{' '}
+        |
+        <Link href='/about'>
+          <a>Nosotros</a>
+        </Link>{' '}
+        |
+        <Link href='/contact'>
+          <a>Contactenos</a>
+        </Link>
+      </nav>
+    </header>
+
+    {children}
+
+    <footer>{'I`m here to stay'}</footer>
+  </div>
+)
