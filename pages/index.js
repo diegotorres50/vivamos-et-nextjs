@@ -1,5 +1,15 @@
+import Layout from '../components/Layout'
+
 function Home() {
-  return <div>Welcome to Next.js!</div>
+  return (
+  	<Layout>
+  	  <div>Vivamos ET</div>
+  	  <h1>Beneficios</h1>
+  	  <div>
+  	    Listado de beneficios
+  	  </div>
+  	</Layout>
+  )
 }
 
 export default Home
